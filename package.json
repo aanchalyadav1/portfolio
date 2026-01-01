@@ -1,6 +1,7 @@
 {
   "name": "anchal-portfolio",
   "private": true,
+  "version": "1.0.0",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -13,5 +14,10 @@
     "@supabase/supabase-js": "^2.39.0",
     "framer-motion": "^11.0.0",
     "react-hot-toast": "^2.4.1"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.1",
+    "postcss": "^8.4.35",
+    "autoprefixer": "^10.4.17"
   }
 }
