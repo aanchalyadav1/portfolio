@@ -1,4 +1,5 @@
 "use client";
+export const dynamic = "force-dynamic";
 
 import { motion } from "framer-motion";
 
@@ -6,20 +7,25 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-black text-white overflow-hidden">
 
+      {/* 🔴 CANARY — REMOVE LATER */}
+      <div className="fixed bottom-4 right-4 z-[9999] bg-red-600 text-white px-4 py-2 rounded-lg text-sm">
+        🔴 UPDATED BUILD LIVE
+      </div>
+
       {/* BACKGROUND GRADIENT */}
       <div className="fixed inset-0 -z-10">
-        <div className="absolute top-[-20%] left-[-20%] h-[600px] w-[600px] rounded-full bg-purple-600/30 blur-[140px]" />
-        <div className="absolute bottom-[-20%] right-[-20%] h-[600px] w-[600px] rounded-full bg-blue-600/30 blur-[140px]" />
+        <div className="absolute top-[-25%] left-[-25%] h-[700px] w-[700px] rounded-full bg-purple-600/40 blur-[160px]" />
+        <div className="absolute bottom-[-25%] right-[-25%] h-[700px] w-[700px] rounded-full bg-blue-600/40 blur-[160px]" />
       </div>
 
       {/* HERO */}
       <section className="h-screen flex flex-col justify-center px-6">
         <motion.h1
-          initial={{ opacity: 0, y: 100 }}
+          initial={{ opacity: 0, y: 120 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
           className="
-            text-[clamp(4rem,14vw,8rem)]
+            text-[clamp(4rem,15vw,9rem)]
             font-extrabold
             leading-[0.85]
             tracking-tight
@@ -36,15 +42,15 @@ export default function Home() {
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.8 }}
-          className="mt-6 max-w-xl text-lg text-zinc-300"
+          transition={{ delay: 0.9 }}
+          className="mt-6 max-w-xl text-xl text-zinc-300"
         >
           Human × AI  
           <br />
           Building intelligent systems where reasoning meets responsibility.
         </motion.p>
 
-        <div className="mt-8 flex gap-4">
+        <div className="mt-10 flex gap-4">
           <a className="px-6 py-3 rounded-xl bg-white text-black font-medium">
             LinkedIn
           </a>
@@ -61,8 +67,8 @@ export default function Home() {
       <motion.div
         initial={{ x: "0%" }}
         animate={{ x: "-100%" }}
-        transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
-        className="whitespace-nowrap text-[10vw] font-bold opacity-10"
+        transition={{ repeat: Infinity, duration: 18, ease: "linear" }}
+        className="whitespace-nowrap text-[12vw] font-bold opacity-10 select-none"
       >
         AI · CYBERSECURITY · HUMAN × AI · AI · CYBERSECURITY · HUMAN × AI ·
       </motion.div>
@@ -77,10 +83,10 @@ export default function Home() {
         ].map(([title, text]) => (
           <motion.div
             key={title}
-            initial={{ opacity: 0, y: 80 }}
+            initial={{ opacity: 0, y: 100 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.9 }}
             className="rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-10"
           >
             <h2 className="text-3xl font-semibold mb-4">{title}</h2>
