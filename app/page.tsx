@@ -1,79 +1,74 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Background from "@/components/Background";
+import GlowCard from "@/components/GlowCard";
 
 export default function Home() {
   return (
-    <main className="max-w-5xl mx-auto px-6 py-24 space-y-28">
+    <main className="relative max-w-6xl mx-auto px-6 py-32 space-y-32">
+      <Background />
 
       {/* HERO */}
-      <motion.section
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="space-y-6"
-      >
-        <h1 className="text-5xl font-bold tracking-tight">
-          Aanchal <span className="text-blue-500">Yadav</span>
-        </h1>
+      <section className="space-y-8">
+        <motion.h1
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-6xl font-bold tracking-tight"
+        >
+          Aanchal <span className="text-blue-400">Yadav</span>
+        </motion.h1>
 
-        <p className="text-zinc-400 max-w-xl leading-relaxed">
-          B.Tech CSE student focused on <strong>AI</strong> and{" "}
-          <strong>Cybersecurity</strong>. Building secure, responsible, and
-          impactful technology.
-        </p>
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.4 }}
+          className="text-xl text-zinc-300 max-w-2xl"
+        >
+          Human × AI  
+          <br />
+          Building secure, intelligent systems at the intersection of
+          <span className="text-white"> AI</span> and
+          <span className="text-white"> Cybersecurity</span>.
+        </motion.p>
 
-        <div className="flex flex-wrap gap-4 pt-4">
-          <a
-            href="https://linkedin.com"
-            className="px-5 py-2 bg-blue-600 hover:bg-blue-700 transition rounded-md text-sm"
-          >
+        <div className="flex gap-4 pt-4">
+          <a className="px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 transition">
             LinkedIn
           </a>
-          <a
-            href="https://github.com"
-            className="px-5 py-2 border border-zinc-700 hover:border-zinc-500 transition rounded-md text-sm"
-          >
+          <a className="px-6 py-3 rounded-xl border border-white/20 hover:border-white/40 transition">
             GitHub
           </a>
-          <a
-            href="/resume-general.pdf"
-            className="px-5 py-2 border border-zinc-700 hover:border-zinc-500 transition rounded-md text-sm"
-          >
+          <a className="px-6 py-3 rounded-xl border border-white/20 hover:border-white/40 transition">
             Resume
           </a>
         </div>
-      </motion.section>
+      </section>
 
       {/* ABOUT */}
-      <section className="space-y-4">
-        <h2 className="text-2xl font-semibold">About Me</h2>
-        <div className="rounded-xl border border-zinc-800 bg-zinc-900/40 p-6">
-          <p className="text-zinc-400 leading-relaxed">
-            I am a Computer Science undergraduate with strong interests in
-            Artificial Intelligence, Machine Learning, and Cybersecurity. I enjoy
-            learning by building real-world projects and am actively seeking
-            internships where I can grow as an engineer.
-          </p>
-        </div>
-      </section>
+      <GlowCard title="About Me">
+        I’m a Computer Science undergraduate focused on AI and Cybersecurity.
+        I enjoy building systems that are not just functional, but responsible,
+        secure, and scalable.
+      </GlowCard>
 
       {/* EDUCATION */}
-      <section className="space-y-4">
-        <h2 className="text-2xl font-semibold">Education</h2>
-        <div className="rounded-xl border border-zinc-800 bg-zinc-900/40 p-6">
-          <p className="font-medium">
-            B.Tech – Computer Science Engineering
-          </p>
-          <p className="text-zinc-400 text-sm mt-1">
-            Sushila Devi Bansal College of Engineering
-          </p>
-        </div>
-      </section>
+      <GlowCard title="Education">
+        <strong>B.Tech – Computer Science Engineering</strong>
+        <br />
+        Sushila Devi Bansal College of Engineering
+      </GlowCard>
+
+      {/* EXPERIENCE */}
+      <GlowCard title="Internships & Experience">
+        <strong>Edunet Foundation (IBM SkillsBuild)</strong>
+        <br />
+        AI & Cybersecurity Internship · Jan–Feb 2025
+      </GlowCard>
 
       {/* SKILLS */}
-      <section className="space-y-4">
-        <h2 className="text-2xl font-semibold">Skills</h2>
+      <GlowCard title="Skills">
         <div className="flex flex-wrap gap-3">
           {[
             "Python",
@@ -86,26 +81,19 @@ export default function Home() {
           ].map(skill => (
             <span
               key={skill}
-              className="px-4 py-1.5 text-sm rounded-full border border-zinc-700 bg-zinc-900/60 hover:border-blue-500 hover:text-blue-400 transition"
+              className="rounded-full px-4 py-2 text-sm bg-white/10 hover:bg-white/20 transition"
             >
               {skill}
             </span>
           ))}
         </div>
-      </section>
+      </GlowCard>
 
-      {/* CURRENTLY LOOKING FOR */}
-      <section className="space-y-4">
-        <h2 className="text-2xl font-semibold">Currently Looking For</h2>
-        <div className="rounded-xl border border-zinc-800 bg-zinc-900/40 p-6">
-          <ul className="list-disc list-inside text-zinc-400 space-y-1">
-            <li>AI / ML Internships</li>
-            <li>Cybersecurity Internships</li>
-            <li>Software Engineering Intern Roles</li>
-          </ul>
-        </div>
-      </section>
-
+      {/* CURRENTLY */}
+      <GlowCard title="Currently Looking For">
+        AI / ML Internships · Cybersecurity Internships · Software Engineering
+        Intern Roles
+      </GlowCard>
     </main>
   );
 }
