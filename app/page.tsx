@@ -2,21 +2,25 @@
 export const dynamic = "force-dynamic";
 
 import { motion } from "framer-motion";
+import WebGLBackground from "@/components/WebGLBackground";
 import Background from "@/components/Background";
+import ParallaxGlow from "@/components/ParallaxGlow";
 import GlowCard from "@/components/GlowCard";
 import FloatingPanel from "@/components/FloatingPanel";
-import ParallaxGlow from "@/components/ParallaxGlow";
 
 export default function Home() {
   return (
     <main className="relative min-h-screen overflow-hidden bg-black text-white">
 
-      {/* BACKGROUND SYSTEM */}
+      {/* DEEPEST LAYER — GPU */}
+      <WebGLBackground />
+
+      {/* MID BACKGROUND SYSTEM */}
       <Background />
       <ParallaxGlow />
 
       {/* HERO */}
-      <section className="relative z-10 min-h-screen flex items-center px-6 max-w-7xl mx-auto">
+      <section className="relative z-20 min-h-screen flex items-center px-6 max-w-7xl mx-auto">
         <div className="space-y-10">
 
           <motion.h1
@@ -62,17 +66,15 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FLOATING INFO PANEL (SIGNATURE ELEMENT) */}
+      {/* FLOATING SYSTEM PANEL */}
       <FloatingPanel>
         <p className="text-sm text-zinc-300">
-          Actively seeking AI / ML & Cybersecurity internships · Open to learning
-          and collaboration
+          Actively seeking AI / ML & Cybersecurity internships · Vibecoder mindset
         </p>
       </FloatingPanel>
 
       {/* CONTENT */}
-      <section className="relative z-10 max-w-5xl mx-auto px-6 py-40 space-y-28">
-
+      <section className="relative z-20 max-w-5xl mx-auto px-6 py-40 space-y-28">
         <GlowCard title="About Me" highlight>
           I’m a Computer Science undergraduate focused on Artificial Intelligence
           and Cybersecurity. I enjoy building systems that are not just
@@ -92,11 +94,6 @@ export default function Home() {
             <strong>Edunet Foundation (IBM SkillsBuild)</strong>
             <br />
             AI & Cybersecurity Internship · Jan – Feb 2025
-            <br />
-            <span className="text-zinc-400">
-              Worked on applied AI concepts, cybersecurity fundamentals, and
-              real-world problem-solving.
-            </span>
           </GlowCard>
         </div>
 
@@ -126,14 +123,6 @@ export default function Home() {
             ))}
           </div>
         </GlowCard>
-
-        <div className="lg:translate-x-10">
-          <GlowCard title="Currently Looking For">
-            AI / ML Internships · Cybersecurity Internships · Software Engineering
-            Intern Roles
-          </GlowCard>
-        </div>
-
       </section>
     </main>
   );
